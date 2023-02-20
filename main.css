@@ -378,7 +378,7 @@ hr {
     font-weight: 400;
     font-size: 16px;
     line-height: 24px;
-    background: url("img/services/icon.svg") left 5px no-repeat;
+    background: url("/img/services/icon.svg") left 5px no-repeat;
     padding-left: 30px;
 }
 
