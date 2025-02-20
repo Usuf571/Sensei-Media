@@ -106,7 +106,28 @@ nav{
     }
   }
 
- 
+  html, body {
+    width: 100%;
+    height:100%;
+  }
+  
+  main {
+      background: linear-gradient(-45deg, #4b1d0f, #e73c7e, #0e7da5, #23d5ab);
+      background-size: 400% 400%;
+      animation: gradient 15s ease infinite;
+  }
+  
+  @keyframes gradient {
+      0% {
+          background-position: 0% 50%;
+      }
+      50% {
+          background-position: 100% 50%;
+      }
+      100% {
+          background-position: 0% 50%;
+      }
+  }
 header{
     position: fixed;
     width: 100%;
@@ -124,10 +145,11 @@ display: none;
     display: none;
 }
 .sells-body{
-    color: black;
+    color: white;
     text-align: center;
 }
 .main-sells{
+    margin-bottom: 20px;
     background-image: url(img/header/sells.jpeg);
     background-position: center;
 }
@@ -283,6 +305,10 @@ main{
     background: #F7F6FF;
     flex: 1 1 auto;
     padding: 94px 15px;
+    background: url(img/main/background.avif)  ;
+    background-position: center ;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .sells-wrapper {
@@ -291,7 +317,7 @@ main{
 }
 .sells-body {
     flex: 1 1 50%;
-    color: BLACK;
+    color: white;
 }
 .sells-body > *:not(:last-child){
     margin-bottom: 30px;
@@ -300,7 +326,6 @@ main{
     font-weight: 400;
     font-size: 55px;
     line-height: 60px;
- 	color: black;
 }
 .sells-body-title span{
     font-weight: 800;
@@ -465,16 +490,14 @@ hr {
 }
 .services{
     background-image: url(img/services/services.jpeg);
-    color: black;
+    color: BLACK;
 }
 .services-body-title {
     font-weight: 700;
     font-size: 38px;
     line-height: 48px;
     margin-bottom: 30px;
-}
-.services-body-item-list{
-	   color: black;
+    color: WHITE;
 }
 .services-body-items {
     display: flex;
@@ -550,7 +573,7 @@ hr {
     font-weight: 400;
     font-size: 16px;
     line-height: 24px;
-    background: url("img/services/icon.svg") left 5px no-repeat;
+    background: url("img/services/icons8-галочка.svg") left 5px no-repeat;
     padding-left: 30px;
 }
 
@@ -581,6 +604,7 @@ hr {
 }
 .consultancy-form {
     flex: 1 1 50%;
+    color: white;
 }
 .consultancy-form-button:hover{
 
@@ -712,6 +736,7 @@ hr {
     font-weight: 700;
     font-size: 38px;
     line-height: 48px;  
+    color: white;
 }
 .our-works-body-first {
     min-height: 518px;
