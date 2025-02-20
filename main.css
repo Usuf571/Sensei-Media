@@ -42,7 +42,7 @@ body{
  
 .button{
     text-align: center;
-    background: linear-gradient(115.11deg, #377541 16.38%, #34f023 95.45%);
+    background-image: linear-gradient(to right top, #6b92cd, #49a3d8, #16b2da, #00c1d4, #28cdc6);
     border-radius: 250px; 
     font-weight: 600;
     font-size: 16px;
@@ -123,8 +123,14 @@ display: none;
 .burger{
     display: none;
 }
-
-
+.sells-body{
+    color: white;
+    text-align: center;
+}
+.main-sells{
+    background-image: url(img/header/sells.jpeg);
+    background-position: center;
+}
 .menu-list {
     display: flex ;
     justify-content: space-between;
@@ -356,14 +362,19 @@ main{
     }
 }
 .business {
-    margin-top: 85px;
-    margin-bottom: 64px;
+    background-image: url(img/main/main-background.avif) ;
+    background-position-x: 50%;
+    background-position-y: 50%;
+
+    padding-bottom: 64px;
 }
 .business-body {
     padding: 30px 85px;
     background: #FFFFFF;
     box-shadow: 0px 4px 18px rgba(0, 0, 0, 0.08);
     border-radius: 20px;
+
+    padding-bottom: 64px;
 }
 .business-body-title {
     font-weight: 700;
@@ -380,6 +391,13 @@ main{
    flex: 1 1 25%;
    margin: 10px 15px;
 }
+   .business-body-item-img{
+        font-size: 20px;
+        line-height: 30px;
+        font-weight: 400;
+        width: 100px;
+        height: 100px;
+    }
 @media (max-width:860px) {
     .business-body-items {
         flex-wrap: wrap;
@@ -394,10 +412,12 @@ main{
     .business-body-item{
         flex:1 1 100%;
     }
-    .business-body-item-title{
+    .business-body-item-image{
         font-size: 20px;
         line-height: 30px;
         font-weight: 400;
+        width: 50px;
+        height: 50px;
     }
     .business-body-title{
         font-size: 28px;
@@ -439,6 +459,10 @@ hr {
 }
 .services{
     margin-bottom: 104px;
+}
+.services{
+    background-image: url(img/services/services.jpeg);
+    color: white;
 }
 .services-body-title {
     font-weight: 700;
