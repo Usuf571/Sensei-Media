@@ -291,6 +291,7 @@ main{
 }
 .sells-body {
     flex: 1 1 50%;
+    color: BLACK;
 }
 .sells-body > *:not(:last-child){
     margin-bottom: 30px;
@@ -377,6 +378,7 @@ main{
     padding-bottom: 64px;
 }
 .business-body-title {
+    text-align: center;
     font-weight: 700;
     font-size: 38px;
     line-height: 48px;
@@ -384,7 +386,7 @@ main{
 .business-body-items {
     margin-top: 30px;
     display: flex;
-    
+    text-align: center;
     align-items: center;
 }
 .business-body-item {
@@ -462,7 +464,7 @@ hr {
 }
 .services{
     background-image: url(img/services/services.jpeg);
-    color: white;
+    color: BLACK;
 }
 .services-body-title {
     font-weight: 700;
