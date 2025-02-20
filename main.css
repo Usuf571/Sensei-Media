@@ -124,7 +124,7 @@ display: none;
     display: none;
 }
 .sells-body{
-    color: white;
+    color: black;
     text-align: center;
 }
 .main-sells{
@@ -464,7 +464,7 @@ hr {
 }
 .services{
     background-image: url(img/services/services.jpeg);
-    color: BLACK;
+    color: black;
 }
 .services-body-title {
     font-weight: 700;
