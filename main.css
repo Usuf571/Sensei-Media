@@ -128,6 +128,7 @@ nav{
           background-position: 0% 50%;
       }
   }
+
 header{
     position: fixed;
     width: 100%;
@@ -548,6 +549,10 @@ hr {
     box-shadow: 0px 4px 18px rgba(0, 0, 0, 0.08);
     border-radius: 15px;
     padding-bottom: 20px;
+
+}
+.out-of-button :nth-child(2){
+    padding-bottom: none;
 }
 .services-body-item-title {
     text-transform: uppercase;
@@ -575,6 +580,8 @@ hr {
     line-height: 24px;
     background: url("img/services/icons8-галочка.svg") left 5px no-repeat;
     padding-left: 30px;
+    width: 200px;
+    max-height: 400px;
 }
 
 .services-hr{
@@ -583,7 +590,7 @@ hr {
     display: block;
     height: 2px;
     background-color: #E2E2E2;
-    margin-bottom: 11px;
+    margin-bottom: 40px;
 }
 
 .-item-price {
