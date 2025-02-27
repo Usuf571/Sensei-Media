@@ -77,16 +77,23 @@ body{
     max-width: 1170px;
     margin: 0 auto;
 }
+header{
+    width: 100%;
+
+}
 nav{
     display: flex;
+    width: 100%;
     padding: 7px 0;
     align-items: center;
     justify-content: space-between;
 }
-.sells-body-title,.sells-body-text ,.business-body-title,.business-body-item {
+
+.sells-body-title,.consultancy-form-title,.sells-body-text ,.business-body-title,.business-body-item {
     animation-duration: 2s;
     animation-name: slidein;
     padding-top: 10px;
+    color: black;
 }
 .nav-subtitle{
     font-size: 25px;
@@ -181,6 +188,15 @@ display: none;
         align-items: center;
         flex-wrap: wrap;
    
+    }
+    .burger{
+        margin-left: 330px;
+    }
+    .nav-subtitle{
+        padding-bottom: 15px;
+        display: flex;
+        flex-direction: column;
+        font-size: 15px;
     }
     .main-sells{
         margin-top: 150px;
@@ -284,9 +300,10 @@ display: none;
       }
     .nav-button{
         align-self: center;
-        margin-top: 20px;
-        padding: 10px 25px;
-        font-size: 14px;
+        max-height: 10px;
+        width: 170px;
+        text-align: center;
+        font-size: 10px;
     }
     .nav-logo{
         max-width: 250px;
@@ -314,13 +331,27 @@ display: none;
 }
 
 main{
-    background: #F7F6FF;
     flex: 1 1 auto;
     padding: 94px 15px;
-    background: url(img/main/background.avif)  ;
-    background-position: center ;
-    background-repeat: no-repeat;
-    background-size: cover;
+}
+main {
+    background: linear-gradient(-45deg, #E6F3FF, #B3E0FF, #FFFFFF, #D9F1FF);
+    background-size: 400% 400%;
+    animation: gradient 7s ease infinite;
+    flex: 1 1 auto;
+    padding: 94px 15px;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 .sells-wrapper {
@@ -500,55 +531,150 @@ hr {
 .services{
     margin-bottom: 104px;
 }
-.services{
+.services {
+    margin-bottom: 104px;
     background-image: url(img/services/services.jpeg);
     color: BLACK;
 }
+
+.services-body {
+    color: WHITE;
+    padding: 20px 0; /* Добавляем внутренние отступы для заголовка */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Центрируем заголовок по горизонтали */
+}
+
 .services-body-title {
     font-weight: 700;
     font-size: 38px;
     line-height: 48px;
     margin-bottom: 30px;
-    color: WHITE;
+    text-align: center; /* Центрируем текст по горизонтали */
+    max-width: 1170px; /* Ограничиваем ширину заголовка, чтобы он не выходил за контейнер */
+    width: 100%; /* Занимает доступное пространство, но не больше max-width */
+    padding: 0 15px; /* Внутренние отступы для адаптации на мобильных */
 }
+
 .services-body-items {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap; /* Позволяет карточкам располагаться в несколько строк */
 }
+
 .services-body-item {
-    max-width: 220px;
+    max-width: 230px;
+    width: 100%;
+    height: 490px;
+    margin: 10px 10px;
     text-align: center;
     justify-content: center;
-    
- 
+    background: #FFFFFF;
+    box-shadow: 0px 4px 18px rgba(0, 0, 0, 0.08);
+    border-radius: 15px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
 }
-@media (max-width:1020px) {
-    .services-body-items{
+
+.out-of-button {
+    flex: 1;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 18px rgba(0, 0, 0, 0.08);
+    border-radius: 15px;
+    padding-bottom: 20px;
+}
+
+.out-of-button :nth-child(2) {
+    padding-bottom: none;
+}
+
+.services-body-item-title {
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: 19px;
+    line-height: 21px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 74px;
+    background: #77B2D3;
+    box-shadow: 0px 4px 18px rgba(0, 0, 0, 0.08);
+    border-radius: 15px 15px 0px 0px;
+    color: #8d0c0c;
+    flex: 0 0 73px;
+}
+
+.services-body-item-list {
+    margin: 20px;
+    text-align: left;
+    flex: 1;
+    overflow-y: auto;
+    max-height: 100%;
+    color: black;
+}
+
+.services-body-item-list-item {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    background: url("img/services/icons8-галочка.svg") left 5px no-repeat;
+    padding-left: 30px;
+    width: 100%;
+    max-width: 180px;
+    word-wrap: break-word;
+}
+
+.services-hr {
+    margin: 0 auto;
+    width: 80%;
+    display: block;
+    height: 2px;
+    background-color: #E2E2E2;
+    margin-bottom: 40px;
+}
+
+@media (max-width: 1020px) {
+    .services-body-items {
         flex-wrap: wrap;
         justify-content: center;
     }
-    .services-body-item{
+    .services-body-item {
         margin-bottom: 30px;
     }
 }
-@media (max-width:420px){
-    .services-body-item{
+
+@media (max-width: 420px) {
+    .services-body-item {
         margin-right: 0;
+        margin-left: 0;
         width: 100%;
+        height: 450px;
     }
 
-    .services-body-item-title{
+    .services-body-item-title {
         font-size: 14px;
         font-weight: 600;
     }
+
     .services-body-item-list {
         margin: 10px;
     }
-    .services-body-item-list-item{
+
+    .services-body-item-list-item {
         font-size: 12px;
+        padding-left: 25px;
+        max-width: 160px;
     }
- 
-    
+
+    .services-body-title {
+        font-size: 28px; /* Уменьшаем шрифт на мобильных */
+        line-height: 38px;
+        padding: 0 10px; /* Уменьшаем внутренние отступы */
+    }
 }
 .services-body-item{
     margin-right: 20px;
