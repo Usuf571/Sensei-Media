@@ -13,7 +13,6 @@
 <body>
    <div class="wrapper">
     <header>
-        <div class="container">
         <nav>
           <img class="nav-logo" src="img/header/logo1.svg" alt="Лого">
             <div class="nav-subtitle" >Гапар Айтиев №37 <span>среднее школа</span></div>
@@ -30,7 +29,6 @@
             <a href="" class="nav-button button">Обратная связь</a>
         </nav>
 
-    </div>
     </header>
     <main>
         <section class="main-sells">
@@ -164,24 +162,19 @@
         <section class="consultancy">
             <div class="consultancy-container container">
                 <div class="consultancy-body">
-                    <form action="" class="consultancy-form">
-                        <h3 class="consultancy-form-title">
-                            заказать Консультацию 
-                            специалиста
-                        </h3>
-                        <div class="consultancy-form-text">
-                            Заполните форму и мы свяжемся с вами в ближайшее время!
-                        </div>
+                    <form action="#" class="consultancy-form" id="consultationForm">
+                        <h3 class="consultancy-form-title">заказать Консультацию специалиста</h3>
+                        <div class="consultancy-form-text">Заполните форму и мы свяжемся с вами в ближайшее время!</div>
                         <div class="consultancy-form-name-phonenumber">
-                            <input type="text" required placeholder="Ваше имя" class="consultancy-form-name-input input" >
-                            <input type="tel" required placeholder="Номер вашего телефона" class="consultancy-form-phone-input input">
+                            <input type="text" required placeholder="Ваше имя" class="consultancy-form-name-input input" id="nameInput">
+                            <input type="tel" required placeholder="Номер вашего телефона" class="consultancy-form-phone-input input" id="phoneInput">
                         </div>
-                        <textarea placeholder="Ваш вопрос"     class="consultancy-form-question input"></textarea>
-                       <div class="consultancy-form-i-accept">
-                        <input type="checkbox" required class="accept-checkbox">
-                        <div class="consultancy-form-i-accept">Я согласен с условиями обработки персональных данных </div>
-                       </div>
-                       <button class="consultancy-form-button button">Отправить</button>
+                        <textarea placeholder="Ваш вопрос" class="consultancy-form-question input" id="questionInput"></textarea>
+                        <div class="consultancy-form-i-accept">
+                            <input type="checkbox" required class="accept-checkbox" id="acceptCheckbox">
+                            <div class="consultancy-form-i-accept">Я согласен с условиями обработки персональных данных</div>
+                        </div>
+                        <button type="submit" class="consultancy-form-button button">Отправить</button>
                     </form>
                     <img src="img/main/408482160_11551763.svg" alt="" class="consultancy-img">
                 </div>
@@ -313,5 +306,6 @@
         </div>
     </footer>
    </div>
+   <script src="script.js"></script>
 </body>
 </html>
