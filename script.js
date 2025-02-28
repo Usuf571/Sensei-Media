@@ -14,7 +14,7 @@ document.getElementById('consultationForm').addEventListener('submit', function(
     }
 
     // Форматируем сообщение для WhatsApp
-    const phoneNumber = '+996220794009'; // Замените на реальный номер (в формате +996XXXXXXXXX)
+    const phoneNumber = '+996701110054'; // Замените на реальный номер (в формате +996XXXXXXXXX)
     const message = `Имя: ${name}\nТелефон: ${phone}\nВопрос: ${question}`;
     const encodedMessage = encodeURIComponent(message);
     const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
