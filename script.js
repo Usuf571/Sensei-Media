@@ -14,7 +14,7 @@ document.getElementById('consultationForm').addEventListener('submit', function(
     }
 
     // Форматируем сообщение для WhatsApp
-    const phoneNumber = '+996701110054'; // Замените на реальный номер (в формате +996XXXXXXXXX)
+    const phoneNumber = '+996220704009'; // Замените на реальный номер (в формате +996XXXXXXXXX)
     const message = `Имя: ${name}\nТелефон: ${phone}\nВопрос: ${question}`;
     const encodedMessage = encodeURIComponent(message);
     const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
@@ -28,4 +28,27 @@ document.getElementById('consultationForm').addEventListener('submit', function(
     setTimeout(() => {
         button.classList.remove('sending');
     }, 2000); // Убираем анимацию через 2 секунды
+});
+// Intersection Observer для анимации при прокрутке
+document.addEventListener('DOMContentLoaded', () => {
+    const sections = document.querySelectorAll('.animate-section');
+
+    const observerOptions = {
+        root: null, // Используем viewport как область наблюдения
+        rootMargin: '0px',
+        threshold: 0.1 // Запускаем анимацию, когда 10% секции видны
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target); // Останавливаем наблюдение после появления
+            }
+        });
+    }, observerOptions);
+
+    sections.forEach(section => {
+        observer.observe(section);
+    });
 });
