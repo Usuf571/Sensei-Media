@@ -31,7 +31,7 @@
 
     </header>
     <main>
-        <section class="main-sells">
+        <section class="main-sells animate-section">
             <div class="sells-container container">
                <div class="sells-wrapper">
                 <div class="sells-body">
@@ -46,35 +46,47 @@
                 
             </div>
         </section>
-        <div class="business">
+        <div class="business animate-section">
             <div class="business-container container">
                 <div class="business-body">
                     <h2 class="business-body-title">Мы гордимся!</h2>
                     <div class="business-body-items">
                         <div class="business-body-item">
-                            <img  class="business-body-item-img" src="img/main/1.png">
+                            <img class="business-body-item-img" src="img/main/1.png">
                             <div class="business-body-item-subtitle">Учебными программами</div>
+                            <div class="business-popup">
+                                <p>Наши учебные программы разработаны с учётом современных стандартов и ориентированы на развитие критического мышления.</p>
+                            </div>
                         </div>
                         <hr class="hr"></hr>
                         <div class="business-body-item">
-                            <img  class="business-body-item-img" src="img/main/2.png">
+                            <img class="business-body-item-img" src="img/main/2.png">
                             <div class="business-body-item-subtitle">Опытными педагогами</div>
+                            <div class="business-popup">
+                                <p>Наши педагоги имеют многолетний опыт работы и постоянно повышают квалификацию.</p>
+                            </div>
                         </div>
                         <hr class="hr"></hr>
                         <div class="business-body-item">
-                            <img  class="business-body-item-img" src="img/main/3.png">
+                            <img class="business-body-item-img" src="img/main/3.png">
                             <div class="business-body-item-subtitle">Всесторонним развитием</div>
+                            <div class="business-popup">
+                                <p>Мы уделяем внимание не только учебным достижениям, но и развитию личности, творчества и спорта.</p>
+                            </div>
                         </div>
                         <hr class="hr"></hr>
                         <div class="business-body-item">
-                            <img  class="business-body-item-img" src="img/main/book.png">
+                            <img class="business-body-item-img" src="img/main/book.png">
                             <div class="business-body-item-subtitle">Качественным образованием</div>
+                            <div class="business-popup">
+                                <p>Наша школа обеспечивает высокое качество образования, подтверждённое успехами учеников.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <section class="services">
+        <section class="services animate-section">
             <div class="services-container container">
                 <div class="services-body">
                     <h3 class="services-body-title">
@@ -159,7 +171,7 @@
                 </div>
             </div>
         </section>
-        <section class="consultancy">
+        <section class="consultancy animate-section">
             <div class="consultancy-container container">
                 <div class="consultancy-body">
                     <form action="#" class="consultancy-form" id="consultationForm">
@@ -171,7 +183,10 @@
                         </div>
                         <textarea placeholder="Ваш вопрос" class="consultancy-form-question input" id="questionInput"></textarea>
                         <div class="consultancy-form-i-accept">
-                            <input type="checkbox" required class="accept-checkbox" id="acceptCheckbox">
+                            <label class="checkbox-wrapper">
+                                <input type="checkbox" required class="accept-checkbox" id="acceptCheckbox">
+                                <span class="checkbox-custom"></span>
+                            </label>
                             <div class="consultancy-form-i-accept">Я согласен с условиями обработки персональных данных</div>
                         </div>
                         <button type="submit" class="consultancy-form-button button">Отправить</button>
@@ -180,7 +195,7 @@
                 </div>
             </div>
         </section>
-        <section class="our-works">
+        <section class="our-works animate-section">
             <div class="our-works-container container">
                 <h2 class="our-works-title">
                     Наши работы
@@ -259,13 +274,13 @@
             </div>
         </section>
     </main>
-    <footer>
-        <div class="footer-top">
+    <footer class="animate-section">
+        <div class="footer-top ">
             <div class="footer-top-container container">
                 <div class="footer-top-body">
                     <div class="footer-top-items">
                    <div class="footer-top-item">
-                    <img src="img/footer/footer-logo.png" alt="" class="footer-top-item-logo">
+                    <img src="img/header/logo1.svg" alt="лого" class="footer-top-item-logo">
                     <div class="footer-top-item-policy">Политика 
                         конфиденциальности</div>
                     <a href="" class="footer-top-item-button button">Обратная связь</a>
