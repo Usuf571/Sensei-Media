@@ -148,6 +148,7 @@ nav{
   }
 
 header{
+    z-index: 2000;
     position: fixed;
     width: 100%;
     padding: 0 15px;
@@ -459,51 +460,124 @@ main {
     align-items: center;
 }
 .business-body-item {
-   flex: 1 1 25%;
-   margin: 10px 15px;
+    flex: 1 1 25%;
+    margin: 10px 15px;
+    position: relative; /* Для позиционирования pop-up */
 }
-   .business-body-item-img{
-        font-size: 20px;
-        line-height: 30px;
-        font-weight: 400;
-        width: 100px;
-        height: 100px;
-    }
-@media (max-width:860px) {
+
+.business-body-item-img {
+    font-size: 20px;
+    line-height: 30px;
+    font-weight: 400;
+    width: 100px;
+    height: 100px;
+}
+
+.business-body-item-subtitle {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+/* Стили для pop-up */
+.business-popup {
+    display: none; /* Скрываем pop-up по умолчанию */
+    position: absolute;
+    top: 100%; /* Позиционируем под элементом */
+    left: 50%;
+    transform: translateX(-50%); /* Центрируем по горизонтали */
+    background: #FFFFFF;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.15);
+    border-radius: 5px;
+    padding: 15px;
+    font-size: 14px;
+    line-height: 20px;
+    color: #333333;
+    width: 200px;
+    z-index: 1000; /* Чтобы pop-up был поверх других элементов */
+    opacity: 0;
+    transition: opacity 1s ease, transform 1s ease;
+    transform: translateX(-50%) translateY(-10px);
+    transition-duration: 3s;
+}
+
+.business-body-item:hover .business-popup {
+    display: block; /* Показываем pop-up при наведении */
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
+hr {
+    display: none;
+    margin: 0;
+    width: 80%;
+    height: 0px;
+    border: 1px solid #C7C7C7;
+}
+
+/* Адаптивность */
+@media (max-width: 860px) {
     .business-body-items {
         flex-wrap: wrap;
         justify-content: center;
-     }
-     
+    }
+
+    .business-body-item {
+        flex: 1 1 45%;
+        margin-bottom: 20px;
+    }
+
+    .business-popup {
+        width: 180px;
+        font-size: 12px;
+        padding: 10px;
+    }
 }
-@media (max-width:520px){
-    .business-body-items{
+
+@media (max-width: 520px) {
+    .business-body-items {
         text-align: center;
     }
-    .business-body-item{
-        flex:1 1 100%;
+
+    .business-body-item {
+        flex: 1 1 100%;
     }
-    .business-body-item-image{
+
+    .business-body-item-img {
         font-size: 20px;
         line-height: 30px;
         font-weight: 400;
         width: 50px;
         height: 50px;
     }
-    .business-body-title{
+
+    .business-body-title {
         font-size: 28px;
     }
-    .hr{
+
+    .hr {
         display: block;
     }
-    
+
+    .business-popup {
+        width: 160px;
+        font-size: 11px;
+        padding: 8px;
+        top: calc(100% + 10px); /* Смещаем ниже для мобильных */
+    }
 }
-@media (max-width:350px){
-    .business-body{
+
+@media (max-width: 350px) {
+    .business-body {
         padding: 20px 55px;
     }
-    .hr{
+
+    .hr {
         display: block;
+    }
+
+    .business-popup {
+        width: 140px;
     }
 }
 .business-body-item-title {
@@ -859,11 +933,113 @@ hr {
     border-radius: 2px;
     margin-right: 12px;
     transition: 1s;
-}
-.consultancy-form-i-accept {
-    display: flex;
+    justify-content: center;
     align-items: center;
 }
+/* ... (существующие стили остаются без изменений до consultancy) ... */
+
+.consultancy-form-i-accept {
+    display: flex;
+    align-items: center; /* Добавляем отступ снизу для адаптивности */
+}
+
+/* Обёртка для чекбокса */
+.checkbox-wrapper {
+    position: relative;
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    margin-right: 12px;
+}
+
+/* Скрываем стандартный чекбокс */
+.accept-checkbox {
+    opacity: 0;
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    z-index: 1; /* Чтобы чекбокс оставался кликабельным */
+}
+
+/* Кастомный чекбокс */
+.checkbox-custom {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 32px;
+    height: 32px;
+    background: #FFFFFF; /* Белый фон */
+    border: 2px solid #87CEEB; /* Голубая граница */
+    border-radius: 6px; /* Закруглённые углы */
+    box-shadow: 0px 4px 18px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease; /* Плавные переходы для всех изменений */
+}
+
+.checkbox-custom:hover {
+    background: #F0F8FF; /* Лёгкий голубой фон при наведении */
+    border-color: #00CED1; /* Более яркий голубой */
+}
+
+/* Стили для галочки при выборе */
+.accept-checkbox:checked + .checkbox-custom {
+    background: #87CEEB; /* Голубой фон при выборе */
+    border-color: #87CEEB;
+}
+
+/* Создаём галочку с помощью псевдоэлементов */
+.accept-checkbox:checked + .checkbox-custom::before {
+    content: '';
+    position: absolute;
+    left: 10px;
+    top: 5px;
+    width: 8px;
+    height: 16px;
+    border: solid #FFFFFF;
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
+    animation: checkmark 0.3s ease forwards;
+}
+
+/* Анимация появления галочки */
+@keyframes checkmark {
+    0% {
+        opacity: 0;
+        transform: rotate(45deg) scale(0);
+    }
+    100% {
+        opacity: 1;
+        transform: rotate(45deg) scale(1);
+    }
+}
+
+/* Адаптивность */
+@media (max-width: 420px) {
+    .checkbox-wrapper {
+        width: 24px;
+        height: 24px;
+        margin-right: 8px;
+    }
+
+    .accept-checkbox {
+        width: 24px;
+        height: 24px;
+    }
+
+    .checkbox-custom {
+        width: 24px;
+        height: 24px;
+        border-radius: 4px;
+    }
+
+    .accept-checkbox:checked + .checkbox-custom::before {
+        left: 7px;
+        top: 10px;
+        width: 6px;
+        height: 12px;
+    }
+}
+
+/* ... (остальные стили остаются без изменений) ... */
 
 .consultancy-img {
     flex: 1 1  50%;
@@ -1081,9 +1257,84 @@ hr {
     text-align: center;
     align-items: center;
 }
-.footer-bottom-container {
-}
+
 
 .footer-bottom-text {
     color: #fff;
 }
+/* ... (существующие стили остаются без изменений до main) ... */
+
+/* Анимация для секций при прокрутке */
+.animate-section {
+    opacity: 0; /* Скрываем секцию по умолчанию */
+    transform: translateY(20px); /* Начальное смещение вниз */
+    transition: opacity 2s ease, transform 2s ease; /* Плавная анимация */
+}
+
+.animate-section.visible {
+    opacity: 1; /* Показываем секцию */
+    transform: translateY(0); /* Возвращаем на место */
+}
+
+/* Стили для main-sells */
+.main-sells {
+    margin-bottom: 20px;
+    background-image: url(img/header/sells.jpeg);
+    background-position: center;
+}
+
+.sells-body {
+    color: white;
+    text-align: center;
+}
+
+/* Стили для business */
+.business {
+    background-image: url(img/main/main-background.avif);
+    background-position-x: 50%;
+    background-position-y: 50%;
+    padding-bottom: 64px;
+}
+
+.business-body {
+    padding: 30px 85px;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 18px rgba(0, 0, 0, 0.08);
+    border-radius: 20px;
+    padding-bottom: 64px;
+}
+
+/* Стили для services */
+.services {
+    margin-bottom: 104px;
+    background-image: url(img/services/services.jpeg);
+    color: BLACK;
+}
+
+.services-body {
+    color: WHITE;
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Стили для consultancy */
+.consultancy {
+    margin-bottom: 112px;
+}
+
+/* Удаляем старую анимацию slidein */
+.sells-body-title, .sells-body-text, .business-body-title, .business-body-item {
+    animation: none; /* Убираем старую анимацию */
+    padding-top: 10px;
+}
+
+/* Адаптивность (уже есть в вашем коде) */
+@media (max-width: 855px) {
+    .main-sells {
+        margin-top: 150px;
+    }
+}
+
+/* ... (остальные стили остаются без изменений) ... */
