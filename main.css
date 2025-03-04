@@ -1262,6 +1262,10 @@ hr {
 .footer-bottom-text {
     color: #fff;
 }
+.footer-top-item-logo {
+    width:100px ;
+    height:90px ;
+}
 /* ... (существующие стили остаются без изменений до main) ... */
 
 /* Анимация для секций при прокрутке */
@@ -1336,10 +1340,7 @@ hr {
         margin-top: 150px;
     }
 }
-.footer-top-item-logo{
-    width: 100px ；
-    height: 855px ；
-}
+
  
 
 /* ... (остальные стили остаются без изменений) ... */
