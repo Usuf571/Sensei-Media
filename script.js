@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const observerOptions = {
         root: null, // Используем viewport как область наблюдения
         rootMargin: '0px',
-        threshold: 0.4 // Запускаем анимацию, когда 10% секции видны
+        threshold: 0.15 // Запускаем анимацию, когда 10% секции видны
     };
 
     const observer = new IntersectionObserver((entries, observer) => {
