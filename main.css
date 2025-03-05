@@ -88,7 +88,20 @@ nav{
     align-items: center;
     justify-content: space-between;
 }
-
+@media (max-width:1006px){
+    .nav-button{
+        width: 200px;
+        height: 54px;
+        font-size: 14px;
+    }
+}
+@media (max-width:920px){
+    .nav-button{
+        max-width: 200px;
+        height: 54px;
+        font-size: 12px;
+    }
+}
 .sells-body-title,.consultancy-form-title,.sells-body-text ,.business-body-title,.business-body-item {
     animation-duration: 2s;
     animation-name: slidein;
@@ -726,8 +739,9 @@ hr {
         margin-right: 0;
         margin-left: 0;
         width: 100%;
-        height: 450px;
+        min-height: 520px;
     }
+
 
     .services-body-item-title {
         font-size: 14px;
@@ -1173,7 +1187,9 @@ hr {
 .footer-top {
     padding: 70px 0;
 }
-
+.footer-top-item-logo{
+    width: 130px;
+}
 
 .footer-top-help {
     max-width: 325px;
@@ -1262,22 +1278,16 @@ hr {
 .footer-bottom-text {
     color: #fff;
 }
-.footer-top-item-logo {
-    width:100px ;
-    height:90px ;
-}
-/* ... (существующие стили остаются без изменений до main) ... */
 
-/* Анимация для секций при прокрутке */
 .animate-section {
-    opacity: 0; /* Скрываем секцию по умолчанию */
-    transform: translateY(20px); /* Начальное смещение вниз */
-    transition: opacity 2s ease, transform 2s ease; /* Плавная анимация */
+    opacity: 0; 
+    transform: translateY(20px); 
+    transition: opacity 2s ease, transform 2s ease; 
 }
 
 .animate-section.visible {
-    opacity: 1; /* Показываем секцию */
-    transform: translateY(0); /* Возвращаем на место */
+    opacity: 1; 
+    transform: translateY(0); 
 }
 
 /* Стили для main-sells */
@@ -1323,24 +1333,72 @@ hr {
     align-items: center;
 }
 
-/* Стили для consultancy */
+
 .consultancy {
     margin-bottom: 112px;
 }
 
-/* Удаляем старую анимацию slidein */
+
 .sells-body-title, .sells-body-text, .business-body-title, .business-body-item {
-    animation: none; /* Убираем старую анимацию */
+    animation: none; 
     padding-top: 10px;
 }
 
-/* Адаптивность (уже есть в вашем коде) */
 @media (max-width: 855px) {
     .main-sells {
         margin-top: 150px;
     }
 }
+/* ... (существующие стили остаются без изменений до body) ... */
 
- 
+/* Стили для прелоадера */
+.preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #FFFFFF; /* Белый фон */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; /* Поверх всего контента */
+    transition: opacity 0.5s ease; /* Плавное исчезновение */
+}
+
+.preloader.hidden {
+    opacity: 0;
+    pointer-events: none; /* Убираем взаимодействие после исчезновения */
+}
+
+/* Стили для спиннера */
+.preloader-spinner {
+    width: 60px;
+    height: 60px;
+    border: 6px solid #87CEEB; /* Голубой цвет */
+    border-top: 6px solid #00CED1; /* Яркий голубой для анимации */
+    border-radius: 50%;
+    animation: spin 1s linear infinite; /* Вращение */
+}
+
+/* Анимация вращения */
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Скрываем контент до загрузки */
+body:not(.loaded) .wrapper {
+    display: none; /* Скрываем контент, пока сайт не загрузится */
+}
+
+/* Показываем контент после загрузки */
+body.loaded .wrapper {
+    display: block;
+}
 
 /* ... (остальные стили остаются без изменений) ... */

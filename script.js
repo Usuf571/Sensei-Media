@@ -14,7 +14,7 @@ document.getElementById('consultationForm').addEventListener('submit', function(
     }
 
     // Форматируем сообщение для WhatsApp
-    const phoneNumber = '+996220794009'; // Замените на реальный номер (в формате +996XXXXXXXXX)
+    const phoneNumber = '+996220704009'; // Замените на реальный номер (в формате +996XXXXXXXXX)
     const message = `Имя: ${name}\nТелефон: ${phone}\nВопрос: ${question}`;
     const encodedMessage = encodeURIComponent(message);
     const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const observerOptions = {
         root: null, // Используем viewport как область наблюдения
         rootMargin: '0px',
-        threshold: 0.15 // Запускаем анимацию, когда 10% секции видны
+        threshold: 0.1 // Запускаем анимацию, когда 10% секции видны
     };
 
     const observer = new IntersectionObserver((entries, observer) => {
@@ -51,4 +51,13 @@ document.addEventListener('DOMContentLoaded', () => {
     sections.forEach(section => {
         observer.observe(section);
     });
+});
+window.addEventListener('load', () => {
+    const preloader = document.querySelector('.preloader');
+    const body = document.body;
+
+    setTimeout(() => {
+        body.classList.add('loaded');
+        preloader.classList.add('hidden');
+    }, 3000); // Минимальная задержка 2 секунды
 });
