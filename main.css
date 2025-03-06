@@ -313,6 +313,7 @@ display: none;
         transform: translateX(0);
       }
     .nav-button{
+        display: none;
         align-self: center;
         max-height: 10px;
         width: 170px;
@@ -444,6 +445,7 @@ main {
     .sells-button:not(:last-child){
         flex: 1 1 auto;
     }
+    
 }
 .business {
     background-image: url(img/main/main-background.avif) ;
@@ -1047,7 +1049,7 @@ hr {
 
     .accept-checkbox:checked + .checkbox-custom::before {
         left: 7px;
-        top: 10px;
+        top: 4px;
         width: 6px;
         height: 12px;
     }
