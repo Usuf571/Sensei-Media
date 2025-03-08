@@ -14,7 +14,64 @@
     <div class="preloader">
         <div class="preloader-spinner"></div>
     </div>
-
+    <div class="modal" id="authModal">
+        <div class="modal-content">
+            <span class="close-btn">×</span>
+            <ul class="tab-group">
+                <li class="tab active" data-tab="login">Вход</li>
+                <li class="tab" data-tab="register">Регистрация</li>
+            </ul>
+            <div class="tab-content">
+                <!-- Форма авторизации -->
+                <div class="tab-pane active" id="login">
+                    <form id="loginForm">
+                        <div class="form-group">
+                            <label for="loginEmail">Email или Логин</label>
+                            <input type="text" id="loginEmail" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="loginPassword">Пароль</label>
+                            <input type="password" id="loginPassword" required>
+                        </div>
+                        <a href="#" class="forgot-password" id="forgotPasswordLink">Забыли пароль?</a>
+                        <button type="submit" class="btn">Войти</button>
+                        <p class="error" id="loginError"></p>
+                    </form>
+                </div>
+                <!-- Форма регистрации -->
+                <div class="tab-pane" id="register">
+                    <form id="registerForm">
+                        <div class="form-group">
+                            <label for="registerEmail">Email</label>
+                            <input type="email" id="registerEmail" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="registerPassword">Пароль</label>
+                            <input type="password" id="registerPassword" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="confirmPassword">Подтвердите пароль</label>
+                            <input type="password" id="confirmPassword" required>
+                        </div>
+                        <button type="submit" class="btn">Зарегистрироваться</button>
+                        <p class="error" id="registerError"></p>
+                    </form>
+                </div>
+                <!-- Форма восстановления пароля -->
+                <div class="tab-pane" id="forgot-password">
+                    <form id="forgotPasswordForm">
+                        <div class="form-group">
+                            <label for="forgotEmail">Введите ваш email</label>
+                            <input type="email" id="forgotEmail" required>
+                        </div>
+                        <button type="submit" class="btn">Сбросить пароль</button>
+                        <p class="error" id="forgotError"></p>
+                        <p class="success" id="forgotSuccess"></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
    <div class="wrapper">
     <header>
         <nav>
