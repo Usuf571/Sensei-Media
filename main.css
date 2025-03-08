@@ -313,7 +313,6 @@ display: none;
         transform: translateX(0);
       }
     .nav-button{
-        display: none;
         align-self: center;
         max-height: 10px;
         width: 170px;
@@ -445,7 +444,6 @@ main {
     .sells-button:not(:last-child){
         flex: 1 1 auto;
     }
-    
 }
 .business {
     background-image: url(img/main/main-background.avif) ;
@@ -1049,7 +1047,7 @@ hr {
 
     .accept-checkbox:checked + .checkbox-custom::before {
         left: 7px;
-        top: 4px;
+        top: 10px;
         width: 6px;
         height: 12px;
     }
@@ -1402,5 +1400,209 @@ body:not(.loaded) .wrapper {
 body.loaded .wrapper {
     display: block;
 }
+/* ... (существующие стили остаются без изменений до body) ... */
 
+/* Стили для модального окна */
+.modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Полупрозрачный фон */
+    z-index: 10000;
+}
+
+.modal-content {
+    background: #FFFFFF;
+    padding: 40px;
+    border-radius: 10px;
+    width: 400px;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.1);
+    position: relative;
+    animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+    from { transform: translateY(-50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 24px;
+    color: #333333;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close-btn:hover {
+    color: #00CED1;
+}
+
+.tab-group {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    padding: 0;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #87CEEB;
+}
+
+.tab {
+    padding: 10px 20px;
+    cursor: pointer;
+    color: #87CEEB;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.tab.active {
+    color: #00CED1;
+    border-bottom: 2px solid #00CED1;
+}
+
+.tab-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.tab-pane {
+    display: none;
+}
+
+.tab-pane.active {
+    display: block;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333333;
+    font-weight: 500;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #87CEEB;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus {
+    border-color: #00CED1;
+    outline: none;
+}
+
+.btn {
+    width: 100%;
+    padding: 12px;
+    background: #87CEEB;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.btn:hover {
+    background: #00CED1;
+}
+
+.error {
+    color: #FF4040;
+    font-size: 14px;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.success {
+    color: #28A745;
+    font-size: 14px;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.forgot-password {
+    display: block;
+    text-align: right;
+    color: #87CEEB;
+    text-decoration: none;
+    font-size: 14px;
+    margin-bottom: 10px;
+    transition: color 0.3s ease;
+}
+
+.forgot-password:hover {
+    color: #00CED1;
+}
+
+/* Стили для кнопки выхода */
+#logoutBtn {
+    padding: 10px 20px;
+    background: #87CEEB;
+    color: #FFFFFF;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+#logoutBtn:hover {
+    background: #00CED1;
+}
+
+/* Скрываем контент до авторизации */
+body:not(.authenticated) .wrapper {
+    display: none;
+}
+
+/* Показываем контент после авторизации */
+body.authenticated .wrapper {
+    display: block;
+}
+
+/* Адаптивность */
+@media (max-width: 480px) {
+    .modal-content {
+        width: 90%;
+        padding: 20px;
+    }
+
+    .tab {
+        padding: 8px 15px;
+        font-size: 14px;
+    }
+
+    .form-group input {
+        font-size: 14px;
+    }
+
+    .btn {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    #logoutBtn {
+        padding: 8px 15px;
+        font-size: 14px;
+    }
+
+    .forgot-password {
+        font-size: 12px;
+    }
+}
+
+/* ... (остальные стили остаются без изменений) ... */
 /* ... (остальные стили остаются без изменений) ... */
